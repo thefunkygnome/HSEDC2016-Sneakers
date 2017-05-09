@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @brand.name %>
+</p>
+
+<%= image_tag @brand.logo %>
+
+<hr>
+
+<hr>
+
+<% @sneakers.each do |sneaker| %>
+  <%= render 'sneakers/show', sneaker: sneaker %>
+<% end %>
+
+<%= render 'sneakers/form', sneaker: Sneaker.new %>
+
+
+<%= link_to 'Edit', edit_brand_path(@brand) %> |
+<%= link_to 'Back', brands_path %>
